@@ -1,18 +1,22 @@
+const { restart } = require("pm2");
+
 exports.config = {
   tests: "./src/specs/e2e/specs/*.spec.ts",
   output: "./output",
   helpers: {
     WebDriver: {
       url: "https://www.amazon.in/",
-      browser: "chrome"
+      browser: "chrome",
+      restart: false,
+      windowSize: "maximize",
+      chrome: {
+        args: ["--start-maximized"],
+      },
     },
-    RandomGeneratorHelper: {
-      require: "./src/specs/e2e/helpers/randomGenerator.helper.ts"
-    }
   },
   include: {},
   bootstrap: null,
   mocha: {},
-  name: "codecept-typescript-example",
-  require: ["ts-node/register"]
+  name: "amazon-test",
+  require: ["ts-node/register"],
 };
