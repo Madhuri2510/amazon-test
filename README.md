@@ -1,4 +1,4 @@
-# codecept-typescript-example
+
 
 Example of using codecept.js with typescript.
 
