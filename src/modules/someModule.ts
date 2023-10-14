@@ -1,3 +1,2 @@
 export function hello(who = "World") {
-  return `Hello, ${who}!`;
-}
+  return `Hello, ${who}
